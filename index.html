@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grocery List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px 5px 10px 0;
+      font-size: 16px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      background: #fff;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    li.purchased {
+      text-decoration: line-through;
+      color: grey;
+      background: #e0e0e0;
+    }
+    .btn {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background-color: #ddd;
+    }
+    #itemCount {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .dark-mode {
+      background-color: #222;
+      color: #fff;
+    }
+    .dark-mode li {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Grocery List 🛒</h1>
+
+  <input type="text" id="itemInput" placeholder="Item name">
+  <input type="number" id="quantityInput" placeholder="Qty" min="1" style="width:80px;">
+  <input type="text" id="notesInput" placeholder="Notes">
+  <button id="addBtn" class="btn">Add</button>
+  <button id="clearBtn" class="btn">Clear All</button>
+  <button onclick="sortList()" class="btn">Sort A-Z</button>
+  <button onclick="toggleDarkMode()" class="btn">Toggle Dark Mode</button>
+
+  <br>
+  <button onclick="filterList('all')" class="btn">All</button>
+  <button onclick="filterList('purchased')" class="btn">Purchased</button>
+  <button onclick="filterList('notPurchased')" class="btn">Not Purchased</button>
+
+  <p id="itemCount">Total Items: 0</p>
+
+  <ul id="groceryList"></ul>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
+
